@@ -246,7 +246,7 @@ class DawnValidatorBot:
                 print(f"{Colors.ERROR}Token cannot be empty{Colors.RESET}")
                 continue
                 
-            print(f"{Colors.SUCCESS}✓ Account details saved{Colors.RESET}")
+            print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]{Colors.SUCCESS} ✓ Account details saved{Colors.RESET}")
             return [{'email': email, 'token': token}]
 
     @staticmethod
@@ -347,12 +347,12 @@ async def main():
             for result in results:
                 color = Colors.SUCCESS if result['keepalive'] else Colors.ERROR
                 status = "✓" if result['keepalive'] else "✗"
-                print(f"{Colors.SUCCESS}[✓]    {result['email']}{Colors.RESET}")
-                print(f"{Colors.SUCCESS}[✓]    Points: {Colors.RESET}{Colors.RESULT}{result['points']}{Colors.RESET}")
-                print(f"{Colors.SUCCESS}[✓]    Social: {Colors.RESET}{Colors.RESULT}{result['social_verified']} verified{Colors.RESET}")
-                print(f"{color}[{status}]    Keepalive: {'Active' if result['keepalive'] else 'Failed'}{Colors.RESET}")
-                print(f"{Colors.SUCCESS}[✓]    Proxy: {Colors.RESET}{Colors.RESULT}{result['proxy']}{Colors.RESET}")
-                print(f"{Colors.SUCCESS}[✓]    App ID: {Colors.RESET}{Colors.RESULT}{result['app_id']}{Colors.RESET}")
+                print(f"{Colors.SUCCESS}[✓] Account: {Colors.RESET}{Colors.RESULT}{result['email']}{Colors.RESET}")
+                print(f"{Colors.SUCCESS}[✓] Points: {Colors.RESET}{Colors.RESULT}{result['points']}{Colors.RESET}")
+                print(f"{Colors.SUCCESS}[✓] Social: {Colors.RESET}{Colors.RESULT}{result['social_verified']} verified{Colors.RESET}")
+                print(f"{color}[{status}] Keepalive: {'Active' if result['keepalive'] else 'Failed'}{Colors.RESET}")
+                print(f"{Colors.SUCCESS}[✓] Proxy: {Colors.RESET}{Colors.RESULT}{result['proxy']}{Colors.RESET}")
+                print(f"{Colors.SUCCESS}[✓] App ID: {Colors.RESET}{Colors.RESULT}{result['app_id']}{Colors.RESET}")
             print("═" * 70 + "\n")
             
             await bot.countdown(500)
