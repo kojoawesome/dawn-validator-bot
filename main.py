@@ -66,7 +66,7 @@ class DawnValidatorBot:
 
     @staticmethod
     def log(message: str, color: str = Colors.INFO, level: str = "INFO") -> None:
-        timestamp = datetime.now().strftime("%H:%M:%S")
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         print(f"[{timestamp}] {color}{message}{Colors.RESET}")
 
     def load_proxies(self) -> None:
@@ -312,9 +312,9 @@ class DawnValidatorBot:
     @staticmethod
     async def countdown(seconds: int) -> None:
         for remaining in range(seconds, 0, -1):
-            print(f"\r{Colors.WARNING}⏳ Next cycle in {remaining}s{Colors.RESET}", end='')
+            print(f"\r[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]{Colors.WARNING}⏳ Next cycle in {remaining}s{Colors.RESET}", end='')
             await asyncio.sleep(1)
-        print(f"\n{Colors.SUCCESS}✓ Starting new cycle, Please wait...{Colors.RESET}\n")
+        print(f"\n[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]{Colors.INFO}✓ Starting new cycle, Please wait...{Colors.RESET}\n")
 
 async def main():
     bot = DawnValidatorBot()
@@ -346,15 +346,16 @@ async def main():
             print(f"{Colors.INFO}Process Summary:{Colors.RESET}")
             for result in results:
                 color = Colors.SUCCESS if result['keepalive'] else Colors.ERROR
-                print(f"{color}[✓] {result['email']}{Colors.RESET}")
-                print(f"{color}    Points: {Colors.RESET}{Colors.RESULT}{result['points']}{Colors.RESET}")
-                print(f"{color}    Social: {Colors.RESET}{Colors.RESULT}{result['social_verified']} verified{Colors.RESET}")
-                print(f"{color}    Keepalive: {Colors.RESET}{Colors.RESULT}{'Active' if result['keepalive'] else 'Failed'}{Colors.RESET}")
-                print(f"{color}    Proxy: {Colors.RESET}{Colors.RESULT}{result['proxy']}{Colors.RESET}")
-                print(f"{color}    App ID: {Colors.RESET}{Colors.RESULT}{result['app_id']}{Colors.RESET}")
+                status = "✓" if result['keepalive'] else "✗"
+                print(f"{Colors.SUCCESS}[✓]    {result['email']}{Colors.RESET}")
+                print(f"{Colors.SUCCESS}[✓]    Points: {Colors.RESET}{Colors.RESULT}{result['points']}{Colors.RESET}")
+                print(f"{Colors.SUCCESS}[✓]    Social: {Colors.RESET}{Colors.RESULT}{result['social_verified']} verified{Colors.RESET}")
+                print(f"{color}[{status}]    Keepalive: {'Active' if result['keepalive'] else 'Failed'}{Colors.RESET}")
+                print(f"{Colors.SUCCESS}[✓]    Proxy: {Colors.RESET}{Colors.RESULT}{result['proxy']}{Colors.RESET}")
+                print(f"{Colors.SUCCESS}[✓]    App ID: {Colors.RESET}{Colors.RESULT}{result['app_id']}{Colors.RESET}")
             print("═" * 70 + "\n")
             
-            await bot.countdown(250)
+            await bot.countdown(500)
 
     except KeyboardInterrupt:
         bot.log("Process interrupted by user", Colors.WARNING)
