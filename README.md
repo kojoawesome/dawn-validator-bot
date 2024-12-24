@@ -1,11 +1,20 @@
 # Dawn Validator Bot
 Automation farming Script for Dawn Validator using proxies. This bot support multi accounts.
-### Tools and components required
+## Tools and components required
 1. Dawn Validator Account | Download [Dawn Validator Extension](https://chromewebstore.google.com/detail/dawn-validator-chrome-ext/fpdkjdnhkakefebpekbdhillbhonfjjp)
-2. Open ``chrome-extension://fpdkjdnhkakefebpekbdhillbhonfjjp/signup.html``, insert Referral code ``rj6ektjg`` and Register
-3. Proxies Static Residental | [FREE 10 PREMIUM PROXIES](https://www.webshare.io/?referral_code=p7k7whpdu2jg) | [Free 100 Premium Proxies](https://proxyscrape.com/?ref=odk1mmj) | Good Premium Proxies (paid): [922proxy](https://www.922proxy.com/register?inviter_code=d03d4fed), [proxy-cheap](https://app.proxy-cheap.com/r/JysUiH), [infatica](https://dashboard.infatica.io/aff.php?aff=544)
+2. Open ``chrome-extension://fpdkjdnhkakefebpekbdhillbhonfjjp/pages/dashboard.html``, insert Referral code ``rj6ektjg`` and Register
+3. Proxies (OPTIONAL)
 4. VPS or RDP (OPTIONAL)
-5. Python version 3.10
+5. Python version 3.10 or Latest
+### Buy Proxies
+- Free Proxies Static Residental: 
+1. [WebShare](https://www.webshare.io/?referral_code=p7k7whpdu2jg)
+2. [ProxyScrape](https://proxyscrape.com/?ref=odk1mmj)
+3. [MonoSans](https://github.com/monosans/proxy-list)
+- Paid Premium Static Residental:
+1. [922proxy](https://www.922proxy.com/register?inviter_code=d03d4fed)
+2. [Proxy-Cheap](https://app.proxy-cheap.com/r/JysUiH)
+3. [Infatica](https://dashboard.infatica.io/aff.php?aff=544)
 ## Getting Token
 - Open ``chrome-extension://fpdkjdnhkakefebpekbdhillbhonfjjp/dashboard.html`` in your browser and login
 - Press F12 or CTRL+SHIFT+I and Select Network
@@ -54,5 +63,5 @@ python3 main.py
 - Select: 2
 # Notes
 - Run this bot, and it will update your referrer code to my invite code if you don't have one.
-- This bot have delay every 5 minutes. 
+- This bot have delay every 500 seconds. 
 - You can just run this bot at your own risk, I'm not responsible for any loss or damage caused by this bot. This bot is for educational purposes only.
