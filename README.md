@@ -4,7 +4,7 @@ Automation farming Script for Dawn Validator using proxies. This bot support mul
 1. Dawn Validator Account | Download [Dawn Validator Extension](https://chromewebstore.google.com/detail/dawn-validator-chrome-ext/fpdkjdnhkakefebpekbdhillbhonfjjp)
 2. Open ``chrome-extension://fpdkjdnhkakefebpekbdhillbhonfjjp/pages/signup.html``, insert Referral code ``rj6ektjg`` and Register
 3. Proxies (OPTIONAL)
-4. VPS or RDP (OPTIONAL)
+4. VPS or RDP (OPTIONAL), Get free $200 credit [DigitalOcean](https://m.do.co/c/3f132e0f7e13) for 60 days here: [Register](https://m.do.co/c/3f132e0f7e13)
 5. Python version 3.10 or Latest
 ### Buy Proxies
 - Free Proxies Static Residental: 
